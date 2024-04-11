@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'chatty_app'
 ]
 
 MIDDLEWARE = [
@@ -75,8 +76,12 @@ WSGI_APPLICATION = 'Chatty.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': 'pg-1b4e9459-talk2me.b.aivencloud.com',
+        "NAME": "chattyDb",
+        "USER": "avnadmin",
+        "PASSWORD": "AVNS_xDadhbqTHLlr_9qLpGl",
+        "PORT": "11606"
     }
 }
 
