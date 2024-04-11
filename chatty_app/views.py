@@ -37,3 +37,15 @@ def login_user(request):
             return JsonResponse({"error": "Invalid credentials"}, status=404)
     else:
         return JsonResponse({"error": "Method not allowed"}, status=405)
+
+
+@csrf_exempt
+def logout_user(request):
+    if request.method == "GET":
+        if request.user.is_authenticated:
+            logout(request)
+            return JsonResponse({'message': "Logout successful"}, status=200)
+        else:
+            return JsonResponse({"error": "User not logged in"}, status=400)
+    else:
+        return JsonResponse({"error": "Method not allowed"}, status=405)
