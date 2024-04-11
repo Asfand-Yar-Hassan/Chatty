@@ -22,5 +22,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('signup/', views.signup, name='signup'),
     path('login/', views.login_user, name='login'),
-    path('logout/', views.logout_user, name='logout')
+    path('logout/', views.logout_user, name='logout'),
+    path('chatroom/<str:chatroom_name>/join/',
+         views.join_chatroom, name="join_chatroom"),
+    path('chatroom/<str:chatroom_name>/leave/',
+         views.leave_chatroom, name="leave_chatroom"),
+    path('chatroom/create/', views.create_chatroom, name="create_chatroom")
 ]
